@@ -20,3 +20,13 @@ class UserTestCase(TestCase):
     def test_user_password(self):
         user = User.objects.get(username=self.USERNAME)
         self.assertTrue(user.check_password(self.PASSWORD), 'Password incorrect')
+
+    def test_user_admin_login(self):
+        # TODO Это скорее всего пример того как использовать POST запросы, а не тестирование аутентификации
+        # С аутентификации надо еще разобраться
+        response = self.client.post(
+            '/admin/login/',
+            {'username': self.USERNAME, 'password': self.PASSWORD},
+            follow=True
+        )
+        self.assertEqual(response.status_code, 200)

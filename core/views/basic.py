@@ -1,5 +1,7 @@
+from django.contrib.auth.decorators import permission_required
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+@permission_required('core.view_animal', raise_exception=True)
+def index(request, response=HttpResponse("Hello, world. You're at the polls index.")):
+    return response
