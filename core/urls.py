@@ -1,7 +1,9 @@
 from django.urls import path
 
-from . import views
+from core.views import basic
+from core.views import asyncio
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('basic/', basic.index, name='basic_index'),
+    path('asyncio/', asyncio.index, name='basic_index'),
 ]
