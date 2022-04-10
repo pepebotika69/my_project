@@ -1,9 +1,8 @@
 from django.urls import path
 
-from core.views import basic
-from core.views import asyncio
+from core.views import pet, asyncio
 
 urlpatterns = [
-    path('basic/', basic.index, name='basic_index'),
     path('asyncio/', asyncio.index, name='basic_index'),
+    path('pet/', pet.index, name='pet_index'),
 ]
