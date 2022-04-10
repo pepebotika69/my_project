@@ -53,7 +53,7 @@ jobs:
       - name: Run Migrations # run migrations to create table in side car db container
         run: python manage.py migrate
       - name: Run Test # running tests
-        run: python manage.py test
+        run: python manage.py test --verbosity=2
 
   package-job: # package job for building and publishing docker images
     runs-on: ubuntu-latest
