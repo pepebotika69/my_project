@@ -13,5 +13,5 @@ class BasicViewsTestCase(TestCase):
         user.save()
 
     def test_user_is_forbidden(self):
-        response = self.client.get('/core/basic/')
+        response = self.client.get('/core/asyncio/')
         self.assertEqual(response.status_code, 403)
