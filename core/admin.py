@@ -1,7 +1,6 @@
-# Register your models here.
 from django.contrib import admin
 
-from core.models import Animal
+from core.models import Animal, Pet
 
 
 class AnimalAdmin(admin.ModelAdmin):
@@ -10,3 +9,11 @@ class AnimalAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Animal, AnimalAdmin)
+
+
+class PetAdmin(admin.ModelAdmin):
+    list_display = ['name', 'animal']
+    search_fields = ['name', 'animal']
+
+
+admin.site.register(Pet, PetAdmin)
