@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Birthday</th>
+                        <th>Animal</th>
+                    </tr>
+                    {% for pet in pets %}
+                        <tr>
+                            <td>{{ pet.name }}</td>
+                            <td>{{ pet.birthday }}</td>
+                            <td>{{ pet.animal }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
